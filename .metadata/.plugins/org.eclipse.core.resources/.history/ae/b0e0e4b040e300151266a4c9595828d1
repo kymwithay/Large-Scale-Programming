@@ -1,0 +1,44 @@
+package test;
+
+import java.io.IOException;
+
+import main.java.*;
+
+public class main 
+{
+
+	public static void main(String[] args) 
+	{
+		PhoneDirectory myDirectory = new PhoneDirectory();
+		String name_to_find = "Kayla Hawkins";
+		String name_to_add = "Jaleel Brown";
+		String number_to_add = "6655443";
+		String name_to_delete = "Anika Hamilton";
+		String name_to_change = "Lakeia Sales";
+		String number_to_change = "3012014";
+		
+		myDirectory.addEntry(name_to_add, number_to_add);
+		myDirectory.changeEntry(name_to_change, number_to_change);
+		
+		String number = myDirectory.getNumber(name_to_find);
+		System.out.println("Khari Seals' number: " + number);
+		
+		try {
+			myDirectory.deleteEntry(name_to_delete);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		try {
+			myDirectory.deleteEntry(name_to_add);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		myDirectory.addEntry(name_to_delete, "4811820");
+		
+	}
+
+}
